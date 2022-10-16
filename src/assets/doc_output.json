@@ -2,9 +2,9 @@
   "openapi": "3.0.0",
   "info": {
     "version": "0.0.1-alpha.0",
-    "title": "ENS Metadata Service",
-    "description": "Set of endpoints to query ENS metadata and more",
-    "contact": "contact@ens.domains",
+    "title": "Defichain Domains Metadata Service",
+    "description": "Set of endpoints to query Defichain Domains metadata and more",
+    "contact": "contact@defichain-domains.com",
     "license": "MIT License",
     "x_logo": {
       "url": "./src/assets/logo.svg",
@@ -31,14 +31,14 @@
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}": {
       "get": {
         "tags": [],
-        "description": "ENS NFT metadata",
+        "description": "Defichain Domains NFT metadata",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -51,7 +51,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+            "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "{}",
@@ -72,14 +72,14 @@
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}/image(.svg)?": {
       "get": {
         "tags": [],
-        "description": "ENS NFT image",
+        "description": "Defichain Domain NFT image",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -92,7 +92,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+            "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "contractAddress",
@@ -117,14 +117,14 @@
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}/rasterize": {
       "get": {
         "tags": [],
-        "description": "ENS NFT image rasterization endpoint",
+        "description": "Defichain Domain NFT image rasterization endpoint",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -137,7 +137,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+            "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "contractAddress",
@@ -156,21 +156,21 @@
     "/{networkName}/avatar/{name}/meta": {
       "get": {
         "tags": [],
-        "description": "ENS avatar metadata",
+        "description": "Defichain Domain avatar metadata",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "ENS name"
+            "description": "Defichain Domain name"
           }
         ],
         "responses": {
@@ -189,21 +189,21 @@
     "/{networkName}/avatar/{name}": {
       "get": {
         "tags": [],
-        "description": "ENS avatar record",
+        "description": "Defichain Domain avatar record",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "ENS name"
+            "description": "Defichain Domain name"
           }
         ],
         "responses": {

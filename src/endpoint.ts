@@ -23,10 +23,10 @@ export default function (app: Express) {
   app.get(
     '/:networkName/:contractAddress(0x[a-fA-F0-9]{40})/:tokenId',
     async function (req, res) {
-      // #swagger.description = 'ENS NFT metadata'
-      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)' }
+      // #swagger.description = 'Defichain Domains NFT metadata'
+      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)' }
       // #swagger.parameters['{}'] = { name: 'contractAddress', description: 'Contract address which stores the NFT indicated by the tokenId' }
-      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names' }
+      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your Defichain Domain name.'}
       const { contractAddress, networkName, tokenId } = req.params;
       try {
         const { provider, SUBGRAPH_URL } = getNetwork(networkName);
@@ -74,10 +74,10 @@ export default function (app: Express) {
     '/:networkName/:contractAddress(0x[a-fA-F0-9]{40})/:tokenId/image(.svg)?',
     /* istanbul ignore next */
     async function (req, res) {
-      // #swagger.description = 'ENS NFT image'
-      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)' }
+      // #swagger.description = 'Defichain Domain NFT image'
+      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)' }
       // #swagger.parameters['contractAddress'] = { description: 'Contract address which stores the NFT indicated by the tokenId' }
-      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names' }
+      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your Defichain Domain name.' }
       const { contractAddress, networkName, tokenId } = req.params;
       try {
         const { provider, SUBGRAPH_URL } = getNetwork(networkName);
@@ -133,10 +133,10 @@ export default function (app: Express) {
     '/:networkName/:contractAddress(0x[a-fA-F0-9]{40})/:tokenId/rasterize',
     /* istanbul ignore next */
     async function (req, res) {
-      // #swagger.description = 'ENS NFT image rasterization endpoint'
-      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)' }
+      // #swagger.description = 'Defichain Domain NFT image rasterization endpoint'
+      // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)' }
       // #swagger.parameters['contractAddress'] = { description: 'Contract address which stores the NFT indicated by the tokenId' }
-      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names' }
+      // #swagger.parameters['tokenId'] = { description: 'Namehash(v1) /Labelhash(v2) of your Defichain Domain name.' }
       const { contractAddress, networkName, tokenId } = req.params;
       try {
         const raster = await rasterize(contractAddress, networkName, tokenId);
@@ -159,9 +159,9 @@ export default function (app: Express) {
   );
 
   app.get('/:networkName/avatar/:name/meta', async function (req, res) {
-    // #swagger.description = 'ENS avatar metadata'
-    // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)' }
-    // #swagger.parameters['name'] = { description: 'ENS name' }
+    // #swagger.description = 'Defichain Domain avatar metadata'
+    // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)' }
+    // #swagger.parameters['name'] = { description: 'Defichain Domain name' }
     const { name, networkName } = req.params;
     try {
       const { provider } = getNetwork(networkName);
@@ -204,9 +204,9 @@ export default function (app: Express) {
   });
 
   app.get('/:networkName/avatar/:name', async function (req, res) {
-    // #swagger.description = 'ENS avatar record'
-    // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (mainnet|rinkeby|ropsten|goerli...)' }
-    // #swagger.parameters['name'] = { description: 'ENS name' }
+    // #swagger.description = 'Defichain Domain avatar record'
+    // #swagger.parameters['networkName'] = { description: 'Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)' }
+    // #swagger.parameters['name'] = { description: 'Defichain Domain name' }
     const { name, networkName } = req.params;
     try {
       const { provider } = getNetwork(networkName);
