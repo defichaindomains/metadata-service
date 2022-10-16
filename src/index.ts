@@ -3,7 +3,7 @@ import cors                                         from 'cors';
 import compression                                  from 'compression';
 import express, { Request, Response, NextFunction } from 'express';
 import docUI                                        from 'redoc-express';
-
+import serverless from 'serverless-http';
 import endpoints                                    from './endpoint';
 
 const setCacheHeader = function (
@@ -48,9 +48,10 @@ app.listen(PORT, () => {
 app.get(
   '/docs',
   docUI({
-    title: 'ENS Metadata Service',
+    title: 'Defichain Domains Metadata Service',
     specUrl: '/assets/doc_output.json',
   })
 );
 
 module.exports = app;
+module.exports.handler = serverless(app);
