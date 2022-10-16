@@ -38,7 +38,6 @@ function shouldCompress(req: Request, res: Response) {
   // fallback to standard filter function
   return compression.filter(req, res);
 }
-
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`APP_LOG::App listening on port ${PORT}`);
@@ -51,5 +50,4 @@ app.get(
     specUrl: '/assets/doc_output.json',
   })
 );
-
 module.exports = app;
