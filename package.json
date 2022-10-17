@@ -37,7 +37,7 @@
     "test": "ava --serial",
     "test:cov": "nyc --reporter=json --reporter=text ava --serial",
     "docgen": "node docgen.js",
-    "heroku-postbuild": "yarn && yarn docgen && yarn build"
+    "heroku-postbuild": "node docgen.js && yarn build"
 
   },
   "devDependencies": {
@@ -77,9 +77,6 @@
     ]
   },
   "volta": {
-    "node": "16.13.0"
-  },
-  "engines": {
     "node": "16.13.0"
   }
 }
