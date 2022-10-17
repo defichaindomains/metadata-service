@@ -36,7 +36,9 @@
     "deploy:test": "ENV=prod yarn build && gcloud app deploy --no-promote --project=ens-metadata-service",
     "test": "ava --serial",
     "test:cov": "nyc --reporter=json --reporter=text ava --serial",
-    "docgen": "node docgen.js"
+    "docgen": "node docgen.js",
+    "heroku-postbuild": "yarn && yarn docgen && yarn build"
+
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
