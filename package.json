@@ -8,7 +8,7 @@
     "@ensdomains/eth-ens-namehash": "^2.0.15",
     "@types/lodash": "^4.14.170",
     "btoa": "^1.2.1",
-    "canvas": "^2.10.2",
+    "canvas": "^2.8.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dompurify": "^2.3.3",
@@ -35,7 +35,9 @@
     "deploy:test": "ENV=prod yarn build && gcloud app deploy --no-promote --project=ens-metadata-service",
     "test": "ava --serial",
     "test:cov": "nyc --reporter=json --reporter=text ava --serial",
-    "docgen": "node docgen.js"
+    "docgen": "node docgen.js",
+    "heroku-postbuild": "node docgen.js && yarn build"
+
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
