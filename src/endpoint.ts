@@ -17,7 +17,7 @@ import { rasterize } from './rasterize';
 
 export default function (app: Express) {
   app.get('/', (_req, res) => {
-    res.send('Well done mate To see more go to "/docs"!');
+    res.send('To see the Defichain Domains metadata api descriprion go to "/docs"!');
   });
 
   app.get(

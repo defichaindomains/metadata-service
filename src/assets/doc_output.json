@@ -32,13 +32,12 @@
       "get": {
         "tags": [],
         "description": "Defichain Domains NFT metadata",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (defichain)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -73,13 +72,12 @@
       "get": {
         "tags": [],
         "description": "Defichain Domain NFT image",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (defichain)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -118,13 +116,12 @@
       "get": {
         "tags": [],
         "description": "Defichain Domain NFT image rasterization endpoint",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (defichain)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
@@ -157,13 +154,12 @@
       "get": {
         "tags": [],
         "description": "Defichain Domain avatar metadata",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (defichain)"
           },
           {
             "name": "name",
@@ -190,13 +186,12 @@
       "get": {
         "tags": [],
         "description": "Defichain Domain avatar record",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "networkName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
+            "description": "Name of the chain to query for. (defichain)"
           },
           {
             "name": "name",

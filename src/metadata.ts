@@ -39,7 +39,6 @@ export interface MetadataInit {
   description?    : string;
   created_date    : number;
   registered_date?: Date | null;
-  expiration_date?: Date | null;
   tokenId         : string;
   version         : Version;
 }

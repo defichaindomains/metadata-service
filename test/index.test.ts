@@ -21,9 +21,9 @@ import {
 import { ethers } from 'ethers';
 import getNetwork from '../src/network';
 
-const { INFURA_URL: infura_url, SUBGRAPH_URL: subgraph_url } =
+const { RPC_URL: infura_url, SUBGRAPH_URL: subgraph_url } =
   getNetwork('rinkeby');
-const INFURA_URL = new URL(infura_url);
+const RPC_URL = new URL(infura_url);
 const SERVER_URL = new URL(server_url);
 console.log('SERVER_URL', SERVER_URL)
 const SUBGRAPH_URL = new URL(subgraph_url);
@@ -74,9 +74,9 @@ function nockInfura(
   params: any[],
   response: EthCallResponse | EthChainIdResponse | NetVersionResponse
 ) {
-  nock(INFURA_URL.origin)
+  nock(RPC_URL.origin)
     .persist()
-    .post(INFURA_URL.pathname, {
+    .post(RPC_URL.pathname, {
       method,
       params,
       id: /[0-9]/,

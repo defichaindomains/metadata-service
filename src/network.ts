@@ -1,9 +1,9 @@
 import { ethers } from 'ethers';
 import { BaseError } from './base';
-import { INFURA_API_KEY } from './config';
 
 export interface UnsupportedNetwork {}
-export class UnsupportedNetwork extends BaseError {}
+export class UnsupportedNetwork extends BaseError { }
+import { ADDRESS_DFI_REGISTRY } from './config';
 
 const NETWORK = {
   MUMBAI: 'mumbai',
@@ -23,16 +23,16 @@ export default function getNetwork(network: string): any {
   // currently subgraphs used under this function are outdated,
   // we will have namewrapper support and more attributes when latest subgraph goes to production
   let SUBGRAPH_URL: string;
-  let INFURA_URL: string;
+  let RPC_URL: string;
   let NETWORKISH: any = undefined;
   switch (network) {
     case NETWORK.MUMBAI:
       SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/miu-digital/dfi-domains-sub-graph-mumbai';
-      INFURA_URL = `https://polygon-mumbai.g.alchemy.com/v2/EZKHx-Re3Vy6pE9s2XUIgiJotOsEqUQW`;
+      RPC_URL = `https://polygon-mumbai.g.alchemy.com/v2/EZKHx-Re3Vy6pE9s2XUIgiJotOsEqUQW`;
       NETWORKISH = {
         name: "mumbai",
         chainId: 80001,
-        ensAddress: "0xf3F75BdBEA18A237eFc7d9C4cc71bF4E084b17fF"
+        ensAddress: ADDRESS_DFI_REGISTRY
       }
       break;
    
@@ -41,6 +41,6 @@ export default function getNetwork(network: string): any {
   }
 
 
-  const provider = new ethers.providers.StaticJsonRpcProvider(INFURA_URL, NETWORKISH);
-  return { INFURA_URL, SUBGRAPH_URL, provider };
+  const provider = new ethers.providers.StaticJsonRpcProvider(RPC_URL, NETWORKISH);
+  return { RPC_URL, SUBGRAPH_URL, provider };
 }

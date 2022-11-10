@@ -10,7 +10,7 @@ import { getAvatarImage } from './avatar';
 import { Version } from './base';
 import { SERVER_URL } from './config';
 
-const eth =
+const dfi =
   '0x456b2fc8f8d0e69c7692da4ac45c1337cd08999944aa5aa106b9863c31799ef3';
 const IMAGE_KEY = 'domains.ens.nft.image';
 
@@ -95,7 +95,7 @@ export async function getDomain(
   }
 
   async function requestAttributes() {
-    if (true || parent.id === eth) {
+    if (true || parent.id === dfi) {
       const { registrations } = await request(SUBGRAPH_URL, GET_REGISTRATIONS, {
         labelhash,
       });
@@ -105,11 +105,6 @@ export async function getDomain(
           trait_type: 'Registration Date',
           display_type: 'date',
           value: registration.registrationDate * 1000,
-        });
-        metadata.addAttribute({
-          trait_type: 'Expiration Date',
-          display_type: 'date',
-          value: registration.expiryDate * 1000,
         });
       }
     }

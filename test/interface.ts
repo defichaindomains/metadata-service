@@ -23,7 +23,6 @@ export interface DomainResponse {
 
 export interface RegistrationResponse {
   registrations: {
-    expiryDate: string;
     labelName: string;
     registrationDate: string;
   }[];
