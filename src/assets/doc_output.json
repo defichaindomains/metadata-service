@@ -11,52 +11,54 @@
       "backgroundColor": "#FFFFFF"
     }
   },
-  "host": "http://localhost:8080",
-  "basePath": "/",
-  "tags": [],
-  "schemes": [
-    "http"
-  ],
-  "consumes": [],
-  "produces": [],
   "paths": {
     "/": {
       "get": {
-        "tags": [],
         "description": "",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}": {
       "get": {
-        "tags": [],
         "description": "Defichain Domains NFT metadata",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "tokenId",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "{}",
             "in": "query",
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -71,34 +73,41 @@
     },
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}/image(.svg)?": {
       "get": {
-        "tags": [],
         "description": "Defichain Domain NFT image",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "tokenId",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "contractAddress",
             "description": "Contract address which stores the NFT indicated by the tokenId",
             "in": "query",
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -116,34 +125,41 @@
     },
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}/rasterize": {
       "get": {
-        "tags": [],
         "description": "Defichain Domain NFT image rasterization endpoint",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "tokenId",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Namehash(v1) /Labelhash(v2) of your Defichain Domain name."
           },
           {
             "name": "contractAddress",
             "description": "Contract address which stores the NFT indicated by the tokenId",
             "in": "query",
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -155,21 +171,24 @@
     },
     "/{networkName}/avatar/{name}/meta": {
       "get": {
-        "tags": [],
         "description": "Defichain Domain avatar metadata",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "name",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Defichain Domain name"
           }
         ],
@@ -188,21 +207,24 @@
     },
     "/{networkName}/avatar/{name}": {
       "get": {
-        "tags": [],
         "description": "Defichain Domain avatar record",
         "parameters": [
           {
             "name": "networkName",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Name of the chain to query for. (metachain|mainnet|rinkeby|ropsten|goerli...)"
           },
           {
             "name": "name",
             "in": "path",
             "required": true,
-            "type": "string",
+            "schema": {
+              "type": "string"
+            },
             "description": "Defichain Domain name"
           }
         ],
@@ -216,6 +238,5 @@
         }
       }
     }
-  },
-  "definitions": {}
+  }
 }
