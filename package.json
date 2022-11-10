@@ -75,8 +75,5 @@
     "nodeArguments": [
       "--loader=ts-node/esm"
     ]
-  },
-  "volta": {
-    "node": "16.13.0"
   }
 }
