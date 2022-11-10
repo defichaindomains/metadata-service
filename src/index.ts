@@ -47,7 +47,7 @@ app.get(
   '/docs',
   docUI({
     title: 'Defichain Domains Metadata Service',
-    specUrl: 'dist/assets/doc_output.json',
+    specUrl: '/assets/doc_output.json',
   })
 );
 module.exports = app;
