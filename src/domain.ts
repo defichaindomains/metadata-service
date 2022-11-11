@@ -89,7 +89,7 @@ export async function getDomain(
         `${SERVER_URL}/${networkName}/avatar/${name}`
       );
       metadata.setImage(
-        `${SERVER_URL}/${networkName}/${contractAddress}/${tokenId}/image.svg`
+        `${SERVER_URL}/${networkName}/${contractAddress}/${hexId}/image.svg`
       );
     }
   }
