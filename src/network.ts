@@ -27,7 +27,7 @@ export default function getNetwork(network: string): any {
   let NETWORKISH: any = undefined;
   switch (network) {
     case NETWORK.MUMBAI:
-      SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/miu-digital/dfi-domains-sub-graph-mumbai';
+      SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/defichaindomains/defichain-domains-registry';
       RPC_URL = `https://polygon-mumbai.g.alchemy.com/v2/EZKHx-Re3Vy6pE9s2XUIgiJotOsEqUQW`;
       NETWORKISH = {
         name: "mumbai",
