@@ -1,17 +1,16 @@
-import { ethers } from 'ethers';
-import { BaseError } from './base';
+import { ethers } from "ethers";
+import { BaseError } from "./base";
 
 export interface UnsupportedNetwork {}
-export class UnsupportedNetwork extends BaseError { }
-import { ADDRESS_DFI_REGISTRY } from './config';
+export class UnsupportedNetwork extends BaseError {}
+import { ADDRESS_DFI_REGISTRY } from "./config";
 
 const NETWORK = {
-  MUMBAI: 'mumbai',
+  DMC: "metachain",
 };
 
 const NETWORK_ID: any = {
-  80001: 'mumbai',
-  
+  1130: "metachain",
 };
 
 export function getNetworkById(networkId: number): any {
@@ -26,21 +25,24 @@ export default function getNetwork(network: string): any {
   let RPC_URL: string;
   let NETWORKISH: any = undefined;
   switch (network) {
-    case NETWORK.MUMBAI:
-      SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/defichaindomains/defichain-domains-registry';
-      RPC_URL = `https://polygon-mumbai.g.alchemy.com/v2/EZKHx-Re3Vy6pE9s2XUIgiJotOsEqUQW`;
+    case NETWORK.DMC:
+      SUBGRAPH_URL =
+        "https://proxy-production-8e85.up.railway.app/https://subgraph.defichain-domains.com/subgraphs/name/defichaindomains/subgraph";
+      RPC_URL = `https://eth.mainnet.ocean.jellyfishsdk.com/`;
       NETWORKISH = {
         name: "mumbai",
-        chainId: 80001,
-        ensAddress: ADDRESS_DFI_REGISTRY
-      }
+        chainId: 1130,
+        ensAddress: ADDRESS_DFI_REGISTRY,
+      };
       break;
-   
+
     default:
       throw new UnsupportedNetwork(`Unknown network '${network}'`);
   }
 
-
-  const provider = new ethers.providers.StaticJsonRpcProvider(RPC_URL, NETWORKISH);
+  const provider = new ethers.providers.StaticJsonRpcProvider(
+    RPC_URL,
+    NETWORKISH
+  );
   return { RPC_URL, SUBGRAPH_URL, provider };
 }
